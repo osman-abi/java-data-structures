@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 class TwoDArray{
 
     public static void main(String[] args) {
@@ -21,17 +19,23 @@ class TwoDArray{
                 new char[]{'0', '-', '-'}
         };
 
+        char[][] arr4 = new char[][] {
+                new char[]{'-', '-', '0'},
+                new char[]{'-', '0', '-'},
+                new char[]{'0', '-', '-'}
+        };
+
         isTwoDArraySame(arr1);
         isTwoDArraySame(arr2);
         isTwoDArraySame(arr3);
+        isTwoDArraySame(arr4);
 
     }
 
     static boolean isAllSame(char[] array){
-        System.out.println(Arrays.toString(array));
         char first = array[0];
-        for (char c : array) {
-            if(c != first && c != '0'){
+        for (int i = 1; i < array.length; i++) {
+            if(array[i] != first || array[i] != '0'){
                 return false;
             }
         }
@@ -48,7 +52,6 @@ class TwoDArray{
 
     static boolean isAntiDiagonalSame(char[][] arr){
         char[] antiDiagonal = new char[arr[0].length];
-        System.out.println(Arrays.toString(antiDiagonal));
         for (int i = 0; i < arr.length; i++) {
             antiDiagonal[i] = arr[i][arr.length - i - 1];
         }
