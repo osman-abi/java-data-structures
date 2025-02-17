@@ -1,3 +1,5 @@
+package BasicDataStructure;
+
 class TwoDArray{
 
     public static void main(String[] args) {
@@ -34,6 +36,9 @@ class TwoDArray{
 
     static boolean isAllSame(char[] array){
         char first = array[0];
+        if (first != '0') {
+            return false;
+        }
         for (int i = 1; i < array.length; i++) {
             if(array[i] != first || array[i] != '0'){
                 return false;
