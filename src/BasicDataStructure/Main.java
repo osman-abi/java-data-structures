@@ -13,6 +13,8 @@ public class Main {
         stacks();
         queue();
         priorityQueue();
+        buildMyOwnStack();
+        buildMyOwnQueue();
     }
 
 
@@ -48,6 +50,41 @@ public class Main {
         System.out.println(priorityQueueDS.insert());
         System.out.println(priorityQueueDS.getHighestPriority());
         System.out.println(priorityQueueDS.removeHighestPriority());
+    }
+
+    static void buildMyOwnStack(){
+        MyOwnStack newStack = new MyOwnStack(7);
+        try{
+        newStack.push(1);
+        newStack.push(2);
+        newStack.push(3);
+        newStack.push(4);
+        newStack.push(5);
+        newStack.push(6);
+        newStack.push(7);
+        newStack.push(8);
+        }
+        catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+    }
+
+    static void buildMyOwnQueue(){
+        MyOwnQueue newQueue = new MyOwnQueue(7);
+        try {
+            newQueue.enqueue(1);
+            newQueue.enqueue(2);
+            newQueue.enqueue(3);
+            newQueue.enqueue(4);
+            newQueue.enqueue(5);
+            newQueue.enqueue(6);
+            System.out.println(newQueue);
+            newQueue.dequeue();
+            newQueue.dequeue();
+            System.out.println(newQueue);
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
     }
 
 }
